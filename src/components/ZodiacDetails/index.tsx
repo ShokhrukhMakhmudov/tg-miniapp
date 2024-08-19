@@ -1,13 +1,7 @@
 import { useState, useEffect, FC } from "react";
 import { fetchHoroscope } from "../../hooks/useHoroscope";
+import { Language, ZodiacDetailsProps } from "../../types";
 
-type ZodiacDetailsProps = {
-  sign: string;
-  language: "ru" | "en";
-  onClose: () => void;
-};
-
-type Language = "original" | "translated";
 const ZodiacDetails: FC<ZodiacDetailsProps> = ({
   sign,
   language: lang,
@@ -20,7 +14,7 @@ const ZodiacDetails: FC<ZodiacDetailsProps> = ({
   useEffect(() => {
     let language: Language = lang === "ru" ? "original" : "translated";
     setLoading(true);
-    fetchHoroscope(sign.toLowerCase(), language)
+    fetchHoroscope(sign.name.toLowerCase(), language)
       .then((data) => {
         setDescription(data.horoscope);
         setLoading(false);
@@ -42,7 +36,7 @@ const ZodiacDetails: FC<ZodiacDetailsProps> = ({
         <p>{error}</p>
       ) : (
         <div className="description">
-          <h2>{sign}</h2>
+          <h2>{lang === "ru" ? sign.ru : sign.en}</h2>
           <p>{description}</p>
         </div>
       )}
