@@ -1,0 +1,74 @@
+/* src/styles/App.css */
+.app {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.zodiac-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* src/styles/ZodiacBlock.css */
+.zodiac-block {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.zodiac-block:hover {
+  transform: scale(1.05);
+}
+
+.zodiac-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.zodiac-info {
+  text-align: center;
+}
+
+/* src/styles/ZodiacDetails.css */
+.zodiac-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.back-button {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* src/styles/LanguageSwitcher.css */
+.language-switcher {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.language-switcher button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.language-switcher .active {
+  background-color: #007bff;
+  color: white;
+}
