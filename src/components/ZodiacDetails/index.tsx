@@ -25,7 +25,7 @@ const ZodiacDetails: FC<ZodiacDetailsProps> = ({
         setDescription(data.horoscope);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError("Failed to load horoscope");
         setLoading(false);
       });

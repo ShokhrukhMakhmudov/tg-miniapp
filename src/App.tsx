@@ -4,13 +4,14 @@ import ZodiacDetails from "./components/ZodiacDetails";
 import "./styles/App.css";
 import { zodiacSigns } from "./data/zodiacSigns";
 
+const tele = window.Telegram.WebApp;
+
 const App: React.FC = () => {
   const [selectedZodiac, setSelectedZodiac] = useState<string | null>(null);
   const [language, setLanguage] = useState<"ru" | "en">("en");
 
-  const tele = window.Telegram.WebApp;
-
   useEffect(() => {
+    tele.ready();
     const userLang = tele?.initDataUnsafe?.user?.language_code;
     setLanguage(userLang === "ru" ? "ru" : "en");
   }, []);

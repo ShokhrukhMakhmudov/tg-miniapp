@@ -10,7 +10,7 @@ export const fetchHoroscope = async (
 
     body: JSON.stringify({
       sign,
-      language: "original",
+      language,
       period: "today",
     }),
   });
